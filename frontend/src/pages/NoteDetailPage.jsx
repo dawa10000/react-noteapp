@@ -80,7 +80,10 @@ const NoteDetailPage = () => {
               <ArrowLeftIcon className="h-5 w-5" />
               Back to Notes
             </Link>
-            <button onClick={handleDelete} className="btn btn-error btn-outline">
+            <button
+              onClick={handleDelete}
+              className="btn btn-error btn-outline"
+            >
               <Trash2Icon className="h-5 w-5" />
               Delete Note
             </button>
@@ -90,7 +93,7 @@ const NoteDetailPage = () => {
             <div className="card-body">
               <div className="form-control mb-4">
                 <label className="label">
-                  <span className="label-text">Title</span>
+                  <span className="label-text p-5 font-bold">Title</span>
                 </label>
                 <input
                   type="text"
@@ -103,18 +106,24 @@ const NoteDetailPage = () => {
 
               <div className="form-control mb-4">
                 <label className="label">
-                  <span className="label-text">Content</span>
+                  <span className="label-text p-5 font-bold">Content</span>
                 </label>
                 <textarea
                   placeholder="Write your note here..."
                   className="textarea textarea-bordered h-32"
                   value={note.content}
-                  onChange={(e) => setNote({ ...note, content: e.target.value })}
+                  onChange={(e) =>
+                    setNote({ ...note, content: e.target.value })
+                  }
                 />
               </div>
 
               <div className="card-actions justify-end">
-                <button className="btn btn-primary" disabled={saving} onClick={handleSave}>
+                <button
+                  className="btn btn-primary"
+                  disabled={saving}
+                  onClick={handleSave}
+                >
                   {saving ? "Saving..." : "Save Changes"}
                 </button>
               </div>
